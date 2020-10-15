@@ -15,26 +15,31 @@ namespace EingabeDezimalWerte
             double b = 0;
             double erg = 0;
             string input = String.Empty;
+            int headerXPosition = 0;
+            string headerText = "Flächenberechnung";
 
-            
-            Console.WriteLine("#########################################");
-            Console.WriteLine("         Flächen Berechnung              ");
-            Console.WriteLine("#########################################");
+            // Signatur der Methode lesen ... 2 Möglichkeiten ... void bedeutet gibt nichts zurück(=Datentyp)... 
+            Console.Beep();
+            Console.Beep(1000, 10000);
+
+
+            // create Header
+            Console.WriteLine(new string('#', Console.WindowWidth - 1));
+            headerXPosition = (Console.WindowWidth - headerText.Length) / 2;
+            Console.CursorLeft = headerXPosition;
+            Console.WriteLine("Flächenberechnung");
+            Console.WriteLine(new string('#', Console.WindowWidth - 1));
 
             // Wert für a einlesen und string in double umwandeln
             Console.WriteLine("\n Bitte Seiten längen angeben:");
             Console.Write("\n\t a: ");
-            input = Console.ReadLine();
-
-            a = double.Parse(input);
+            a = double.Parse(input = Console.ReadLine());
 
             // Wert für b einlesen und string in double umwandeln
             Console.Write("\n\t b: ");
-            input = Console.ReadLine();
+            b = double.Parse(input = Console.ReadLine());
 
             // berechnen der Fläche
-            b = double.Parse(input);
-
             erg = a * b;
 
             Console.WriteLine("\n Fläche des Rechtecks ({0} x {1}): {2}", a, b, erg);
