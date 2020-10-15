@@ -18,9 +18,10 @@ namespace EingabeDezimalWerte
             int headerXPosition = 0;
             string headerText = "Flächenberechnung";
 
-            // Signatur der Methode lesen ... 2 Möglichkeiten ... void bedeutet gibt nichts zurück(=Datentyp)... 
-            Console.Beep();
-            Console.Beep(1000, 10000);
+
+            // Signatur der Methode lesen ... 2 Möglichkeiten ... void bedeutet gibt nichts zurück(=Datentyp)...oder Frequenz und Dauer übergeben 
+            //Console.Beep();
+            //Console.Beep(1000, 10000);
 
 
             // create Header
@@ -33,18 +34,39 @@ namespace EingabeDezimalWerte
             // Wert für a einlesen und string in double umwandeln
             Console.WriteLine("\n Bitte Seiten längen angeben:");
             Console.Write("\n\t a: ");
-            a = double.Parse(input = Console.ReadLine());
 
-            // Wert für b einlesen und string in double umwandeln
-            Console.Write("\n\t b: ");
-            b = double.Parse(input = Console.ReadLine());
+            // try und catch gehören immer zusammen ... es darf nichts dazwischen stehen ... nicht optimiert
+            try
+            {
+                a = double.Parse(input = Console.ReadLine());
 
-            // berechnen der Fläche
+                // Wert für b einlesen und string in double umwandeln
+                Console.Write("\n\t b: ");
+                b = double.Parse(input = Console.ReadLine());
+            }
+            catch (Exception e) 
+            {
+                Console.WriteLine("Uuups! Leider ist was schief gelaufen.");
+                Console.WriteLine(e.Message);
+
+                Console.WriteLine("Source: \n" + e.StackTrace);
+
+                Environment.Exit(1);
+            }
+            
+            // berechnen der Fläche und anzeigen
             erg = a * b;
 
             Console.WriteLine("\n Fläche des Rechtecks ({0} x {1}): {2}", a, b, erg);
             // Console.WriteLine($"\n Fläche des Rechtecks ({a} x {b}): {erg}"); // .... wäre auch möglich
+            
 
+//            finally
+//            {
+
+//            }
+            Console.WriteLine("Programm Ende!");
+            
         }
     }
 }
