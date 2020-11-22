@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+namespace GrundlagenVererbung2
+{
     public class Employee
     {
         private string _name;
@@ -43,7 +45,7 @@ using System.Threading.Tasks;
         public string Name
         {
             get { return $"{_name}"; }
-            
+
         }
 
         public Guid Id
@@ -55,7 +57,7 @@ using System.Threading.Tasks;
 
         public string GetInfoString()
         {
-            return $"[{Id}]: {_name} - {_geburtsDatum.Date}";
+            return $"[{Id}]: {_name} - {_geburtsDatum.ToShortDateString}";
         }
 
         public decimal GetCalculatedSalary()
@@ -63,6 +65,9 @@ using System.Threading.Tasks;
             return _gehalt;
         }
 
+        
+
+
 
     }
-
+}

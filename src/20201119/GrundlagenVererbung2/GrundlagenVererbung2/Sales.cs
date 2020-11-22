@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrundlagenVererbung
+namespace GrundlagenVererbung2
 {
     public class Sales : Employee
     {
         private double _provision;
-        
+
         public Sales(string name, DateTime geburtsDatum, decimal gehalt, double provision)
                : base(name, geburtsDatum, gehalt)
         {
