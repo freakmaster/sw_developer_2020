@@ -27,7 +27,7 @@ namespace GrundlagenKapselung
 
             car.SpeedUp(car.CurrentSpeed * -1);
             car.DisplayInfos();
-
+            
             while (car.CurrentSpeed < 100)
             {
                 car.SpeedUp(10);
