@@ -30,9 +30,10 @@ namespace Grundlagen_HatEin_Vererbung
         public int Volume
         {
             get { return _volume; }
-            set { 
-                
+            set {
+
                 //Todo: Limit possible 0-10
+
                 _volume = value; }
         }
 

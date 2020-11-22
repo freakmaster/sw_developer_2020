@@ -59,6 +59,7 @@ namespace Grundlagen_HatEin_Vererbung
             if (_state == VehicleState.Unlocked)
             {
                 Console.WriteLine($"Das Fahrzeug '{_model}' bewegt sich.");
+
             }
             else
             {

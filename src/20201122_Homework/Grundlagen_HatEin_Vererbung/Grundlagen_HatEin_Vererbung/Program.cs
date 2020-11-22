@@ -10,8 +10,39 @@ namespace Grundlagen_HatEin_Vererbung
     {
         static void Main(string[] args)
         {
-            Vehicle car = new Vehicle();
-            
+            Car ford = new Car("Ford Mustang", "Supercar", 260, DriveMode.RWD);
+            Car honda = new Car("Honda Civic", "BudgetRacer", 220, DriveMode.AWD);
+            Plane f16 = new Plane("F16", "Fighter", 2500, 60000.00, 0.0);
+            RadioMitCD kennwood = new RadioMitCD(90.5, 3, Power.On, true, 5);
+
+
+            Console.WriteLine($"hat CD: {kennwood.ModeCD} - Track {kennwood.Track} ");
+
+            Console.WriteLine(ford.GetInfoString());
+            Console.WriteLine(ford.GetDriveMode());
+            Console.WriteLine(honda.GetInfoString());
+            Console.WriteLine(honda.GetDriveMode());
+
+            Console.WriteLine();
+
+            Console.WriteLine(f16.GetInfoString());
+
+            Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
+            f16.AddAltitude(5000);
+            Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
+            f16.AddAltitude(10000);
+            Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
+            f16.AddAltitude(20000);
+            Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
+            f16.AddAltitude(30000);
+            Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
+            f16.AddAltitude(-20000);
+            Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
+            f16.AddAltitude(20000);
+            Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
+
+
+
         }
     }
 }

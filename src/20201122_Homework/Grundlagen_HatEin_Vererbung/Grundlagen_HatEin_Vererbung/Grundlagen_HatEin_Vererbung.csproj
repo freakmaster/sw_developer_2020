@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
+    <Compile Include="DriveMode.cs" />
+    <Compile Include="Plane.cs" />
     <Compile Include="Power.cs" />
     <Compile Include="Radio.cs" />
+    <Compile Include="RadioMitCD.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
