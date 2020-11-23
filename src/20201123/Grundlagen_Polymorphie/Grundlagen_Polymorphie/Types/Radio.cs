@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grundlagen_HatEin_Vererbung
+namespace Grundlagen_Polymorphie.Types
 {
     public class Radio
     {
@@ -23,7 +23,7 @@ namespace Grundlagen_HatEin_Vererbung
         public Power PowerState
         {
             get { return _powerState; }
-        
+
         }
 
 
@@ -33,7 +33,7 @@ namespace Grundlagen_HatEin_Vererbung
             set
             {
                 //Todo: Limit possible 0-10
-                    _volume = value;
+                _volume = value;
             }
         }
 
@@ -45,7 +45,7 @@ namespace Grundlagen_HatEin_Vererbung
                 // ToDo: Limit possible 86.0 - 102.0 (FM Band)
                 _frequency = value;
             }
-            
+
         }
 
         public string GetInfoString()

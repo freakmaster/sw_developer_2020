@@ -10,6 +10,18 @@ namespace Grundlagen_HatEin_Vererbung
     {
         static void Main(string[] args)
         {
+            Vehicle myCar = new Vehicle("Badmobil", "Badmobil Black Edition V2", 250);
+            myCar.GetInfoString();
+            myCar.ChangeRadioPowerState(Power.On);
+            Console.WriteLine(myCar.GetInfoString());
+            Console.WriteLine();
+            myCar.State = VehicleState.Unlocked;
+            Console.WriteLine(myCar.GetInfoString());
+            myCar.MediaVolume = 8;
+            
+            Console.WriteLine(myCar.GetInfoString());
+
+            /*
             Car ford = new Car("Ford Mustang", "Supercar", 260, DriveMode.RWD);
             Car honda = new Car("Honda Civic", "BudgetRacer", 220, DriveMode.AWD);
             Plane f16 = new Plane("F16", "Fighter", 2500, 60000.00, 0.0);
@@ -41,7 +53,7 @@ namespace Grundlagen_HatEin_Vererbung
             Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
             f16.AddAltitude(20000);
             Console.WriteLine($"aktuelle Flughöhe: {f16.CurrentAltitude}");
-
+            */
 
 
         }
