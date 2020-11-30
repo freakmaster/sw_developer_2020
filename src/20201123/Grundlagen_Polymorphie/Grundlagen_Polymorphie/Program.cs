@@ -22,11 +22,12 @@ namespace Grundlagen_Polymorphie
 
 
             //Hauptprogramm
-            foreach (var vehicle in myVehicleList)
-            {
-                Display(vehicle);
-            }
+            //foreach (var vehicle in myVehicleList)
+            //{
+            //    Display(vehicle);
+            //}
 
+            Console.WriteLine(myVehicleList[3].GetInfoString());
 
 
         }
@@ -35,6 +36,11 @@ namespace Grundlagen_Polymorphie
         {
             Console.WriteLine(vehicle.GetInfoString());
             Console.WriteLine();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
