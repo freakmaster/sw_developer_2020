@@ -11,8 +11,8 @@ namespace SelectionMenuExample.Items
         private ConsoleColor _itemColor;
 
         public ColoredMenuItem(string description, ConsoleKey code, ConsoleColor itemColor)
-            : base(description, code)
-        { 
+            :base(description, code)
+        {
             _itemColor = itemColor;
         }
 
@@ -28,12 +28,7 @@ namespace SelectionMenuExample.Items
 
             base.Display(width);
 
-            Console.ForegroundColor = oldColor;
-
-           
+            Console.ForegroundColor = oldColor;            
         }
-
-
-
     }
 }

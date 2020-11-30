@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace SelectionMenuExample.Items
 {
-    public class MenuItem : IMenuItem
+    public class MenuItem : IMenuItemWithUpdateableSelectable
     {
         private string _description;
         private ConsoleKey _code;
+        private bool _selectable;
+        private bool _visible;
+
 
         public MenuItem(string description, ConsoleKey code)
         {
             _description = description;
             _code = code;
 
-            //wenn das Beispiel statt ConsoleKey mit char
-            //code wird von char in string gewandelt... dann der string in Kleinbuchstaben gewandelt und vom string das erste Zeichen in _code abgelegt
-            //_code = code.ToString().ToLower()[0];
+            _visible = true;
+            _selectable = true;
         }
         
         public string Description
@@ -31,11 +33,30 @@ namespace SelectionMenuExample.Items
             get { return _code; }
         }
 
+        public bool Selectable
+        {
+            get { return _selectable; }           
+        }
+
+        public bool Visible 
+        {
+            get { return _visible; }
+            set { _visible = value; } 
+        }
+
         public virtual void Display(int width)
         {
-            // Daten laden ...........L
-            // Programm beenden.......Q
-            Console.WriteLine($"{_description} {new string('.', width - _description.Length)} {_code}" );
+            //Daten laden...............L
+            //Program beenden...........Q
+            if (_visible)
+            {
+                Console.WriteLine($"{_description} {new string('.', width - _description.Length)} {_code}");
+            }
+        }
+
+        public void UpdateSelectable(bool newValue)
+        {
+            _selectable = newValue;
         }
     }
 }

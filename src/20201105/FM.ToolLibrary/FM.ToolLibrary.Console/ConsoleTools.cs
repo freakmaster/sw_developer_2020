@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FM.ToolLibrary.ConsoleIo
 {
-    public class ConsoleTools
+    public abstract class ConsoleTools
     {
         /// <summary>
         /// Generates colored messages for the console output
@@ -40,7 +40,7 @@ namespace FM.ToolLibrary.ConsoleIo
         /// </summary>
         /// <param name="inputPrompt">Prompt for the user</param>
         /// <returns>Input value as integer</returns>
-        public static int GetInt(string inputPrompt)
+        public static int GetInt(string inputPrompt, DisplayErrorHandler displayErrorHandler)
         {
             int userInputValue = 0;
             bool userInputIsValid = false;
@@ -56,7 +56,8 @@ namespace FM.ToolLibrary.ConsoleIo
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error: {ex.Message}");
+                    //Aufruf der Methode aus dem delegate
+                    displayErrorHandler(ex.Message);
                     userInputIsValid = false;
                 }
             }

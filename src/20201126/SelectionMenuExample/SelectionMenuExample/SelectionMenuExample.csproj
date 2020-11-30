@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82672B60-107A-4EE6-8C64-30A88E473331}</ProjectGuid>
+    <ProjectGuid>{EE96A9C3-E43C-4D51-9550-B3368C2130C9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>SelectionMenuExample</RootNamespace>
     <AssemblyName>SelectionMenuExample</AssemblyName>
@@ -48,6 +48,7 @@
     <Compile Include="Items\ColoredMenuItem.cs" />
     <Compile Include="Items\EmptyItem.cs" />
     <Compile Include="Items\MenuItem.cs" />
+    <Compile Include="Items\SeperatorItem.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
